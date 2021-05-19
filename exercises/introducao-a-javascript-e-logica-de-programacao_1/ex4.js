@@ -1,8 +1,13 @@
-let a = 10;
-let b = 2;
+let a = 0;
 
-if (a > b) {
-    console.log("O maior é : " + a);
+let res;
+
+if (a < 0) {
+    res = "negative";
+} else if (a == 0) {
+    res = "zero";
 } else {
-    onsole.log("O maior é : " + b);
+    res = "positive";
 }
+
+console.log("O valor é : " + res);
