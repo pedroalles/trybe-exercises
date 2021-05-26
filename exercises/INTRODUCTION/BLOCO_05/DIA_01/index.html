@@ -83,6 +83,15 @@
 
         corrigeTextH1();
 
+        function modificaTextoPMaiusculo() {
+            let textosP = document.getElementsByTagName('p');
+            for (item of textosP) {
+                item.innerText = item.innerText.toLowerCase();
+            }
+        };
+
+        modificaTextoPMaiusculo();
+
     </script>
 </body>
 
