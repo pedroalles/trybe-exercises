@@ -92,6 +92,15 @@
 
         modificaTextoPMaiusculo();
 
+        function exibeTagsPConsole() {
+            let textosP = document.getElementsByTagName('p');
+            for (item of textosP) {
+                console.log(item.innerText);
+            }
+        }
+
+        exibeTagsPConsole();
+
     </script>
 </body>
 
