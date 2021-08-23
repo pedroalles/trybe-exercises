@@ -2,17 +2,11 @@ const NEXT_COLOR = 'NEXT_COLOR';
 const PREVIOUS_COLOR = 'PREVIOUS_COLOR';
 const RANDOM_COLOR = 'RANDOM_COLOR';
 
-const nextColor = () => ({
-  type: NEXT_COLOR
-})
+const nextColor = () => ({ type: NEXT_COLOR });
 
-const previousColor = () => ({
-  type: PREVIOUS_COLOR
-})
+const previousColor = () => ({ type: PREVIOUS_COLOR });
 
-const randomColor = () => ({
-  type: RANDOM_COLOR
-})
+const randomColor = () => ({ type: RANDOM_COLOR });
 
 const ESTADO_INICIAL = {
   colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
@@ -30,37 +24,27 @@ function criarCor() {
 }
 
 const reducer = (state = ESTADO_INICIAL, action) => {
+  const { index, colors } = state;
+  const colorsLen = colors.length;
+
   switch (action.type) {
     case NEXT_COLOR:
-      if (state.index === state.colors.length - 1) {
-        return {
-          ...state, index: 0
-        }
-      }
-      else {
-        return {
-          ...state, index: state.index + 1
-        }
+      return {
+        ...state, index: index === colorsLen - 1 ? 0 : index + 1
       }
     case PREVIOUS_COLOR:
-      if (state.index === 0) {
-        return {
-          ...state, index: state.colors.length - 1
-        }
-      }
-      else {
-        return {
-          ...state, index: state.index - 1
-        }
+      return {
+        ...state, index: index === 0 ? colorsLen - 1 : index - 1
       }
     case RANDOM_COLOR:
       return {
-        ...state, colors: [...state.colors, criarCor()], index: state.colors.length
+        ...state, colors: [...colors, criarCor()], index: colorsLen
       }
     default:
       return state;
   }
 }
+
 const store = Redux.createStore(reducer)
 
 store.subscribe(() => {
