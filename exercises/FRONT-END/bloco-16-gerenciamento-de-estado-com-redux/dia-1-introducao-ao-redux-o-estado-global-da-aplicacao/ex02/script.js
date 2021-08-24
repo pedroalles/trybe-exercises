@@ -12,21 +12,19 @@ const ESTADO_INICIAL_2 = {
   cidade: 'São Paulo',
 };
 
-const CHANGE_NAME = 'CHANGE_NAME';
-const CHANGE_LASTNAME = 'CHANGE_LASTNAME';
+const CHANGE_NAME_LASTNAME_1 = 'CHANGE_NAME_LASTNAME_1';
+const CHANGE_NAME_LASTNAME_2 = 'CHANGE_NAME_LASTNAME_2';
 
-const changeName = (nome) => ({ type: CHANGE_NAME, nome })
-const changeLastname = (sobrenome) => ({ type: CHANGE_LASTNAME, sobrenome })
+const changeNameLastname_1 = (nome, sobrenome) => ({ type: CHANGE_NAME_LASTNAME_1, nome, sobrenome })
+const changeNameLastname_2 = (nome, sobrenome) => ({ type: CHANGE_NAME_LASTNAME_2, nome, sobrenome })
 
 const meuPrimeiroReducer = (state = ESTADO_INICIAL_1, action) => {
   switch (action.type) {
-    case CHANGE_NAME:
+    case CHANGE_NAME_LASTNAME_1:
       return {
-        ...state, nome: action.nome,
-      }
-    case CHANGE_LASTNAME:
-      return {
-        ...state, sobrenome: action.sobrenome,
+        ...state,
+        nome: action.nome,
+        sobrenome: action.sobrenome
       }
     default:
       return state;
@@ -35,13 +33,11 @@ const meuPrimeiroReducer = (state = ESTADO_INICIAL_1, action) => {
 
 const meuSegundoReducer = (state = ESTADO_INICIAL_2, action) => {
   switch (action.type) {
-    case CHANGE_NAME:
+    case CHANGE_NAME_LASTNAME_2:
       return {
-        ...state, nome: action.nome,
-      }
-    case CHANGE_LASTNAME:
-      return {
-        ...state, sobrenome: action.sobrenome,
+        ...state,
+        nome: action.nome,
+        sobrenome: action.sobrenome
       }
     default:
       return state;
@@ -67,7 +63,7 @@ store.subscribe(() => {
 
 window.onload = () => {
   setTimeout(() => {
-    store.dispatch(changeName('Pedro'))
-    store.dispatch(changeLastname('Alles'))
-  }, 1000);
+    store.dispatch(changeNameLastname_1('Bill', 'Gates'))
+    store.dispatch(changeNameLastname_2('Steve', 'Jobs'))
+  }, 2000);
 };
