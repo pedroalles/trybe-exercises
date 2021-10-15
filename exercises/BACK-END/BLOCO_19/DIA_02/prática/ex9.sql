@@ -1,2 +1,4 @@
--- Escreva uma query para exibir a soma dos números 10 e 15
+-- Escreva uma query que exiba a string "O projeto Name precisou de Hours horas para ser concluído." para cada projeto
 
+USE Scientists;
+SELECT CONCAT('O projeto ', Name, ' precisou de ', Hours, ' horas para ser concluído.') as resultado FROM Projects;
