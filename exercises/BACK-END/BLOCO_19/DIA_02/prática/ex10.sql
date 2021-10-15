@@ -1,2 +1,5 @@
--- Escreva uma query para exibir a soma dos números 10 e 15
+-- Escreva uma query para exibir o nome e as horas dos três projetos com a maior quantidade de horas
 
+USE Scientists;
+SELECT Name, Hours FROM Projects
+ORDER BY Hours DESC LIMIT 3;

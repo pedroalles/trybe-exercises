@@ -1,2 +1,4 @@
--- Escreva uma query para exibir a soma dos números 10 e 15
+-- Escreva uma query para exibir o código de todos os projetos da tabela AssignedTo sem que haja repetições
 
+USE Scientists;
+SELECT DISTINCT Project FROM AssignedTo;

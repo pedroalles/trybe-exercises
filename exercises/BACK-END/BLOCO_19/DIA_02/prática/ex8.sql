@@ -1,2 +1,5 @@
--- Escreva uma query para exibir a soma dos números 10 e 15
+-- Escreva uma query para exibir o nome dos Projetos em ordem alfabética descendente
 
+USE Scientists;
+SELECT Name FROM Projects
+ORDER BY Name DESC;

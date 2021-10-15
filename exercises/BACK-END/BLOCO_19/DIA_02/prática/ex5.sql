@@ -1,2 +1,4 @@
--- Escreva uma query para exibir a soma dos números 10 e 15
+-- Escreva uma query para exibir todas as informações de todos os cientistas
 
+USE Scientists;
+SELECT * FROM Scientists;
